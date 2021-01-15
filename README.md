@@ -1,0 +1,2 @@
+# Fee-Management-Project
+This repository consists of the project which was developed by me during my time in IACSD(CDAC-ACTS). In this project , I have tried to improve the work of Accounts department by creating a project which can facilitate them in keeping track of fee records which was a tedious task earlier but now, by using my project, they can easily keep a track of the fee management process which can reduce a lot of work hours and can facilitate in efficient management
