@@ -145,5 +145,31 @@ public static StudentBean getRecordByRollno(int rollno){
 	
 	return bean;
 }
+	public static List<StudentBean> getRecordsByCourseName(String course){
+	List<StudentBean> list = new ArrayList<StudentBean>();
+	try {
+		Connection cn = getDBConnection();
+		PreparedStatement pst = cn.prepareStatement("select * from fee_student where course=?");
+		pst.setString(1, course);
+		ResultSet rs = pst.executeQuery();
+		while( rs.next()) {
+			StudentBean bean = new StudentBean();
+			bean.setRollno(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setEmail(rs.getString(3));
+			bean.setSex(rs.getString(4));
+			bean.setCourse(rs.getString(5));         
+			bean.setFee(rs.getInt(6));
+			bean.setPaid(rs.getInt(7));
+			bean.setDue(rs.getInt(8));
+			bean.setAddress(rs.getString(9));
+			bean.setContact(rs.getString(10));
+			list.add(bean);
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return list;
+}
 
 }
